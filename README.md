@@ -1,4 +1,4 @@
-# 🎮 Esports Tournament Microservices Platform
+# 🎮 Esports Tournament Microservices 
 
 A scalable, microservices-driven backend for managing esports tournaments and matches. Built using Node.js, Express, MongoDB, Docker, and RabbitMQ — with real-time email notifications using Resend.
 
