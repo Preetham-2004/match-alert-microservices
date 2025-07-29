@@ -28,15 +28,13 @@ A scalable, microservices-driven backend for managing esports tournaments and ma
   <img src="assets/email-preview-2.jpg" alt="Email Notification - Tournament" style="width: 360px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
 </div>
 
-
 ### 📦 RabbitMQ Messaging
 - **Asynchronous event-driven communication** between services
 - Events like `tournament_created`, `match_created` trigger mail notifications
 
-<p align="center">
+<p align="center" style="margin-top: 20px;">
   <img src="assets/RabbitMQ.png" alt="RabbitMQ Flow" style="width: 360px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
 </p>
-
 
 ### 🐳 Fully Dockerized
 - Each service runs as an isolated container
