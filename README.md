@@ -24,8 +24,8 @@ A scalable, microservices-driven backend for managing esports tournaments and ma
 - Uses `notification-service` to decouple notification logic from core business services
 
 <p align="center">
-  <img src="assets/email-preview-1.jpg" alt="Email Notification 1" width="400"/>
-  <img src="assets/email-preview-2.jpg" alt="Email Notification 2" width="400"/>
+  <img src="assets/email-preview-1.jpg" alt="Email Notification - Match" width="370" style="margin-right: 16px;"/>
+  <img src="assets/email-preview-2.jpg" alt="Email Notification - Tournament" width="370" style="margin-left: 16px;"/>
 </p>
 
 ### 📦 RabbitMQ Messaging
