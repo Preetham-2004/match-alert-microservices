@@ -59,7 +59,6 @@ Integrates with **Resend API** using a decoupled `notification-service`.
 | **Docker**        | Containerization                 |
 | **Docker Compose**| Service orchestration            |
 | **Resend**        | Email delivery API               |
-| **dotenv**        | Secure environment config        |
 
 ---
 
