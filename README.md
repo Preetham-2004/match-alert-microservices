@@ -19,22 +19,25 @@ A scalable, microservices-driven backend for managing esports tournaments and ma
 - Automatically associates with tournaments
 
 ### 📬 Email Notifications
-- Sends real-time emails when a **tournament** or **match** is created
-- Integrates with **Resend API**
-- Uses `notification-service` to decouple notification logic from core business services
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 20px;">
-  <img src="assets/email-preview-1.jpg" alt="Email Notification - Match" style="width: 360px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
-  <img src="assets/email-preview-2.jpg" alt="Email Notification - Tournament" style="width: 360px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
-</div>
+Sends real-time emails when a **tournament** or **match** is created.  
+Integrates with **Resend API** using a decoupled `notification-service`.
+
+| Match Notification | Tournament Notification |
+|--------------------|--------------------------|
+| <img src="assets/email-preview-1.jpg" width="360"/> | <img src="assets/email-preview-2.jpg" width="360"/> |
+
+---
 
 ### 📦 RabbitMQ Messaging
-- **Asynchronous event-driven communication** between services
+
+- **Asynchronous event-driven communication** between services  
 - Events like `tournament_created`, `match_created` trigger mail notifications
 
-<p align="center" style="margin-top: 20px;">
-  <img src="assets/RabbitMQ.png" alt="RabbitMQ Flow" style="width: 360px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+<p align="center">
+  <img src="assets/RabbitMQ.png" width="360"/>
 </p>
+
 
 ### 🐳 Fully Dockerized
 - Each service runs as an isolated container
