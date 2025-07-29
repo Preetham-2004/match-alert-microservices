@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongodb/mongodb-community-server:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  user-service:
+    build: ./user-services
+    container_name: user-service
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+
+  tournament-service:
+    build: ./tournament-services
+    container_name: tournament-service
+    ports:
+      - "3002:3002"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      mongo:
+        condition: service_started
+
+  match-service:
+    build: ./match-services
+    container_name: match-service
+    ports:
+      - "3003:3003"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      mongo:
+        condition: service_started
+
+  notification-service:
+    build: ./notification-services
+    container_name: notification-service
+    ports:
+      - "3004:3004"
+    env_file:
+      - ./notification-services/.env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      mongo:
+        condition: service_started
+
+volumes:
+  mongo_data:
