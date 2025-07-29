@@ -23,18 +23,20 @@ A scalable, microservices-driven backend for managing esports tournaments and ma
 - Integrates with **Resend API**
 - Uses `notification-service` to decouple notification logic from core business services
 
-<p align="center">
-  <img src="assets/email-preview-1.jpg" alt="Email Notification - Match" width="370" style="margin-right: 16px;"/>
-  <img src="assets/email-preview-2.jpg" alt="Email Notification - Tournament" width="370" style="margin-left: 16px;"/>
-</p>
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="assets/email-preview-1.jpg" alt="Email Notification - Match" width="370" />
+  <img src="assets/email-preview-2.jpg" alt="Email Notification - Tournament" width="370" />
+</div>
+
 
 ### 📦 RabbitMQ Messaging
 - **Asynchronous event-driven communication** between services
 - Events like `tournament_created`, `match_created` trigger mail notifications
 
 <p align="center">
-  <img src="assets/RabbitMQ.png" alt="RabbitMQ Flow" width="400"/>
+  <img src="assets/RabbitMQ.png" alt="RabbitMQ Flow" width="400" />
 </p>
+
 
 ### 🐳 Fully Dockerized
 - Each service runs as an isolated container
