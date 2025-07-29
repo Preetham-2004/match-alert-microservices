@@ -19,17 +19,24 @@ A scalable, microservices-driven backend for managing esports tournaments and ma
 - Automatically associates with tournaments
 
 ### 📬 Email Notifications
-- Sends real-time emails when a **tournament** or **match** is created
-- Integrates with **Resend API**
-- Uses `notification-service` to decouple notification logic from core business services
-![Email Notification 1](assets/email-preview-1.jpg)
-![Email Notification 2](assets/email-preview-2.jpg)
 
+Sends real-time emails when a **tournament** or **match** is created.  
+Integrates with **Resend API** using a decoupled `notification-service`.
+
+| Match Notification | Tournament Notification |
+|--------------------|--------------------------|
+| <img src="assets/email-preview-1.jpg" width="360"/> | <img src="assets/email-preview-2.jpg" width="360"/> |
+
+---
 
 ### 📦 RabbitMQ Messaging
-- **Asynchronous event-driven communication** between services
+
+- **Asynchronous event-driven communication** between services  
 - Events like `tournament_created`, `match_created` trigger mail notifications
-![RabbitMQ Flow](assets/RabbitMQ.png)
+
+<p align="center">
+  <img src="assets/RabbitMQ.png" width="360"/>
+</p>
 
 
 ### 🐳 Fully Dockerized
@@ -43,23 +50,23 @@ A scalable, microservices-driven backend for managing esports tournaments and ma
 
 ## 🧱 Tech Stack
 
-| Tool/Service     | Purpose                         |
-|------------------|----------------------------------|
-| **Node.js**      | JavaScript runtime               |
-| **Express.js**   | Backend HTTP framework           |
-| **MongoDB**      | NoSQL database for persistence   |
-| **RabbitMQ**     | Message broker for events        |
-| **Docker**       | Containerization                 |
-| **Docker Compose**| Service orchestration           |
-| **Resend**       | Email delivery API               |
-| **dotenv**       | Secure environment config        |
+| Tool/Service      | Purpose                          |
+|-------------------|----------------------------------|
+| **Node.js**       | JavaScript runtime               |
+| **Express.js**    | Backend HTTP framework           |
+| **MongoDB**       | NoSQL database for persistence   |
+| **RabbitMQ**      | Message broker for events        |
+| **Docker**        | Containerization                 |
+| **Docker Compose**| Service orchestration            |
+| **Resend**        | Email delivery API               |
+| **dotenv**        | Secure environment config        |
 
 ---
 
 ## 📂 Microservices Overview
 
-| Service              | Port  | Role                                      |
-|----------------------|-------|-------------------------------------------|
+| Service               | Port  | Role                                      |
+|-----------------------|-------|-------------------------------------------|
 | `user-service`        | 3001  | Basic user info / ID mapping              |
 | `tournament-service`  | 3002  | Create/manage tournaments                 |
 | `match-service`       | 3003  | Schedule matches linked to tournaments    |
@@ -75,4 +82,4 @@ A scalable, microservices-driven backend for managing esports tournaments and ma
 2. The relevant service sends an event to RabbitMQ (`tournament_created` or `match_created`).
 3. `notification-service` listens to that event and sends an email via **Resend**.
 
-
+---
